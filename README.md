@@ -4,18 +4,18 @@ This repository show cases some ways to avoid CORS errors if your React App get'
 
 ## Content of this Repository
 
-This repository consists of two little parts - a Frontend React App (build with vite and the "avoid CORS errors" makes use of it's abbility to proxy calls) and the backend server (a simple NodeJs/express server).
+This repository consists of two little parts - a frontend React App (build with vite and the "avoid CORS errors" makes use of it's abbility to proxy calls) and the backend server (a simple NodeJs/express server).
 
 ### nodejs/express server
 
 It provides four routes (where basically only two are needed for this showcase):
-/cors/roles ... Gives a list of roles (the data from the "API") using the Access-Control-Allow-Origin in it's simplest form (\*).
-/roles ... Gives the same list of roles - but doesn't have any CORS header. This endpoint simulates an external server, which you can not control.
+- /cors/roles ... Gives a list of roles (the data from the "API") using the Access-Control-Allow-Origin in it's simplest form (\*).
+- /roles ... Gives the same list of roles - but doesn't have any CORS header. This endpoint simulates an external server, which is not under your control.
 
 ### React App
 
 The React App supports the following routes:
-/roles - gets the routes from the servers /roles route. Therefore it uses the vite proxy possibility, which is configured in vite.config.js:
+/roles - gets the routes from the servers /roles route. Therefore it uses the vite proxy feature, which is configured in **vite.config.js**:
 
 ```
   server: {
